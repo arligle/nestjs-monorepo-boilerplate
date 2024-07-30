@@ -1,3 +1,10 @@
 {
-  "cSpell.words": ["aiodb", "biomejs", "commitlint", "copyfiles", "nestjs"]
+  "cSpell.words": [
+    "aiodb",
+    "biomejs",
+    "Casl",
+    "commitlint",
+    "copyfiles",
+    "nestjs"
+  ]
 }

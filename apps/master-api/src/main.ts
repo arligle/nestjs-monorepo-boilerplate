@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { Logger } from '@nestjs/common';
 import type { NestExpressApplication } from "@nestjs/platform-express";
 import { join } from 'node:path';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -21,6 +22,16 @@ async function bootstrap() {
   app.enableShutdownHooks();
   // cors
   app.enableCors();
+  // swagger config
+  const options = new DocumentBuilder()
+    .setTitle("Fullstack Starter Monorepo")
+    .setDescription("集成了Casl 和 hbs模版")
+    .setVersion("1.0")
+    .addOAuth2()
+    .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup("docs", app, document);
+
   await app.listen(port);
   Logger.log(`🚀 Application is running on: http://localhost:${port}/${prefix}`);
 }
