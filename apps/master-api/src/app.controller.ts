@@ -1,12 +1,17 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Get, Render } from '@nestjs/common';
+// biome-ignore lint/style/useImportType: <explanation>
+// import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
-
+  // constructor(private readonly appService: AppService) { }
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Render("index")
+  home() {
+    return { message: "这是一个内部使用的模版项目" };
   }
+  // @Get()
+  // getHello(): string {
+  //   return this.appService.getHello();
+  // }
 }

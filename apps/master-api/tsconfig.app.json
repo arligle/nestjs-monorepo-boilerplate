@@ -4,6 +4,6 @@
     "declaration": false,
     "outDir": "../../dist/apps/master-api"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "./views/**/*"],
   "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
 }
