@@ -17,6 +17,13 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "paths": {}
+    "paths": {
+      "@aio/data-modeling": [
+        "libs/data-modeling/src"
+      ],
+      "@aio/data-modeling/*": [
+        "libs/data-modeling/src/*"
+      ]
+    }
   }
 }

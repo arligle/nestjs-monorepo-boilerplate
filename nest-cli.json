@@ -27,6 +27,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/reader/tsconfig.app.json"
       }
+    },
+    "data-modeling": {
+      "type": "library",
+      "root": "libs/data-modeling",
+      "entryFile": "index",
+      "sourceRoot": "libs/data-modeling/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/data-modeling/tsconfig.lib.json"
+      }
     }
   }
 }
