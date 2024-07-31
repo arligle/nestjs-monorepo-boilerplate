@@ -5,6 +5,8 @@
     "Casl",
     "commitlint",
     "copyfiles",
-    "nestjs"
+    "nestjs",
+    "signin",
+    "signout"
   ]
 }
