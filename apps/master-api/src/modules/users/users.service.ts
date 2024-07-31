@@ -14,7 +14,7 @@ import type { Request } from "express";
 
 @Injectable()
 export class UsersService {
-	constructor(private readonly drizzleService: DrizzleService) {}
+	constructor(private readonly drizzleService: DrizzleService) { }
 	db = this.drizzleService.database;
 	table = drizzleSchema.users;
 
@@ -72,4 +72,6 @@ export class UsersService {
 		// return the current user
 		return user;
 	}
+
+
 }

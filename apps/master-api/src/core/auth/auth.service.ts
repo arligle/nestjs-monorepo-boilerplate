@@ -26,7 +26,7 @@ export class AuthService {
 	constructor(
 		private readonly databaseService: DrizzleService,
 		private readonly jwtService: JwtUtility,
-	) {}
+	) { }
 
 	db = this.databaseService.database;
 
@@ -40,8 +40,9 @@ export class AuthService {
 	 * @returns {Promise<Response>} -带有创建的用户数据的 HTTP 响应。
 	 * @throws {ConflictException} -如果用户已存在于数据库中。
 	 */
-	async signup(body: AuthBaseDto, req: Request, res: Response): responseT {
+	async userCreate(body: AuthBaseDto, req: Request, res: Response): responseT {
 		const { email, password } = body;
+		console.log(body.password)
 
 		// 检查用户是否存在
 		const userExists: boolean = await existsInDatabase({

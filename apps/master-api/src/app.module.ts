@@ -14,6 +14,8 @@ const imports = [
 	 * 配置对象被Joi校验，校验失败会抛出异常
 	 */
 	ConfigModule.forRoot({
+		isGlobal: true,
+		// envFilePath: '.env',
 		validationSchema: Joi.object({
 			DB_HOST: Joi.string().required(),
 			DB_PORT: Joi.number().required(),
@@ -29,13 +31,14 @@ const imports = [
 	DrizzleModule.forRootAsync({
 		imports: [ConfigModule],
 		inject: [ConfigService],
-		useFactory: (configService: ConfigService) => ({
-			host: configService.get("DB_HOST"),
-			port: configService.get("DB_PORT"),
-			user: configService.get("DB_USER"),
-			password: configService.get("DB_PASSWORD"),
-			database: configService.get("DB_NAME"),
-		}),
+		useFactory:
+			(configService: ConfigService) => ({
+				host: configService.get("DB_HOST"),
+				port: configService.get("DB_PORT"),
+				user: configService.get("DB_USER"),
+				password: configService.get("DB_PASSWORD"),
+				database: configService.get("DB_NAME"),
+			}),
 	}),
 	AuthModule,
 	UsersModule,
@@ -47,4 +50,4 @@ const imports = [
 	providers: [],
 })
 // eslint-disable-next-line prettier/prettier
-export class AppModule {}
+export class AppModule { }

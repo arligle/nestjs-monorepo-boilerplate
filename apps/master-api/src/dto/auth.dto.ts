@@ -6,13 +6,16 @@ import {
 	Matches,
 } from "class-validator";
 
+
 export class AuthBaseDto {
 	/**
 	 * - User's email address
 	 * - Must be a valid email address
 	 * @example "user@example.com"
 	 */
+
 	@IsNotEmpty()
+	@IsString()
 	@IsEmail()
 	public readonly email: string;
 

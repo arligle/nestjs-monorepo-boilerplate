@@ -1,9 +1,10 @@
 import { ResponseMessage } from "../app/app.response";
 import { Body, Controller, Get, Post, Req, Res } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
+import { ApiOperation, ApiTags } from "@nestjs/swagger";
 import type { Request, Response } from "express";
-import type { AuthBaseDto } from "../../dto/auth.dto";
-// biome-ignore lint/style/useImportType: <explanation>
+// biome-ignore lint/style/useImportType: <注意：装饰器不能使用 import type>
+import { AuthBaseDto } from "../../dto/auth.dto";
+// biome-ignore lint/style/useImportType: <注意：需要使用装饰器，以及存在注入机制，所以不能使用 import type>
 import { AuthService } from "./auth.service";
 
 @ApiTags("认证")
@@ -25,10 +26,11 @@ export class AuthController {
 	 * @param {Response} res -Express 响应对象。
 	 * @returns {Promise<Response>} -带有创建的用户数据的 HTTP 响应。
 	 */
-	@Post("signup")
+	@Post("register")
+	@ApiOperation({ summary: '注册新用户' })
 	@ResponseMessage('User created') // custom response message for interceptor
 	signup(@Body() body: AuthBaseDto, @Req() req: Request, @Res() res: Response): Promise<Response> {
-		return this.authService.signup(body, req, res);
+		return this.authService.userCreate(body, req, res);
 	}
 
 	/**
@@ -45,7 +47,7 @@ export class AuthController {
 	 * @param {Response} res -Express 响应对象。
 	 * @returns {Promise<Response>} -带有 JWT 令牌的 HTTP 响应。
 	 */
-	@Post("signin")
+	@Post("login")
 	@ResponseMessage("User logged in")
 	signin(@Body() body: AuthBaseDto, @Req() req: Request, @Res() res: Response): Promise<Response> {
 		return this.authService.signin(body, req, res);
