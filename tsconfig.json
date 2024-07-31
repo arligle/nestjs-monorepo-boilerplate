@@ -23,6 +23,12 @@
       ],
       "@aio/data-modeling/*": [
         "libs/data-modeling/src/*"
+      ],
+      "@aio/nest-drizzle": [
+        "libs/nest-drizzle/src"
+      ],
+      "@aio/nest-drizzle/*": [
+        "libs/nest-drizzle/src/*"
       ]
     }
   }

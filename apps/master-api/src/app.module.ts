@@ -1,6 +1,6 @@
 import { AppController } from "./core/app/app.controller";
 import { AuthModule } from "./core/auth/auth.module";
-import { DrizzleModule } from "./core/drizzle/drizzle.module";
+import { DrizzleModule } from "@aio/nest-drizzle/drizzle.module";
 import { UsersModule } from "./modules/users/users.module";
 import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";

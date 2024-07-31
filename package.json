@@ -116,7 +116,8 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "^@aio/data-modeling(|/.*)$": "<rootDir>/libs/data-modeling/src/$1"
+      "^@aio/data-modeling(|/.*)$": "<rootDir>/libs/data-modeling/src/$1",
+      "^@aio/nest-drizzle(|/.*)$": "<rootDir>/libs/nest-drizzle/src/$1"
     }
   }
 }

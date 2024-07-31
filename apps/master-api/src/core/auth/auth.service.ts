@@ -3,9 +3,9 @@ import { CustomResponse } from "../app/app.response";
 import {
 	createInDatabase,
 	existsInDatabase,
-} from "../drizzle/db-access-methods";
+} from "@aio/nest-drizzle/db-access-methods";
 // biome-ignore lint/style/useImportType: <explanation>
-import { DrizzleService } from "../drizzle/drizzle.service";
+import { DrizzleService } from "@aio/nest-drizzle/drizzle.service";
 import { drizzleSchema } from "@aio/data-modeling/drizzle-schema/aiodb-schema";
 import {
 	ConflictException,

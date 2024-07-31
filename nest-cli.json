@@ -36,6 +36,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/data-modeling/tsconfig.lib.json"
       }
+    },
+    "nest-drizzle": {
+      "type": "library",
+      "root": "libs/nest-drizzle",
+      "entryFile": "index",
+      "sourceRoot": "libs/nest-drizzle/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/nest-drizzle/tsconfig.lib.json"
+      }
     }
   }
 }

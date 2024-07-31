@@ -1,9 +1,9 @@
 import {
 	existsInDatabase,
 	extractFieldsInDatabase,
-} from "../../core/drizzle/db-access-methods";
+} from "@aio/nest-drizzle/db-access-methods";
 // biome-ignore lint/style/useImportType: <受Nestjs机制约束，不能使用import type>
-import { DrizzleService } from "../../core/drizzle/drizzle.service";
+import { DrizzleService } from "@aio/nest-drizzle/drizzle.service";
 import { drizzleSchema } from "@aio/data-modeling/drizzle-schema/aiodb-schema";
 import {
 	ForbiddenException,
